@@ -1,0 +1,81 @@
+<html>
+<head>
+    <script>
+        count=1;
+        count1=1;
+        /*var drop="<select name='TESTS' style='width: 170px;'><option value='bt'>Blood Test</option><option value='drug abuse'>Drug Abuse</option><option value='Cholestrol'>Cholestrol test</option><option value='AIDS'>AIDS</option></select>";
+        var athome="<select name='athome' style='width: 170px;'><option value='yes'>YES</option><option value='no'>NO</option></select>";
+        var timeslot="<br><select name='slot' style='width: 130px;'><option>7am-8am</option><option>8am-9am</option><option>9am-10am</option><option>10am-11am</option><option>11am-12pm</option><option>12pm-1pm</option><option>1pm-2pm</option><option>2pm-3pm</option><option>3pm-4pm</option><option>4pm-5pm</option><option>5pm-6pm</option><option>6pm-7pm</option><option>7pm-8pm</option></select><input type='button' value='Add Slot' onclick=addSlot()>";*/
+        function addRow() {
+            var inparr=document.getElementsByClassName("ip"+count);
+            for(var i=0;i<inparr.length;i++){
+                inparr[i].setAttribute('readonly','readonly');
+            }
+            var inpsarr=document.getElementsByClassName("ips"+count);
+            for(var i=0;i<inpsarr.length;i++){
+                inpsarr[i].setAttribute('disabled','disabled');
+            }
+            document.getElementById("btn"+count).disabled=true;
+            count=count+1;
+            var table = document.getElementById("myTable");
+            var row = table.insertRow(1);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            count1=count1+1;
+            cell3.setAttribute("id","slot"+count1);
+            var cell4 = row.insertCell(3);
+            cell1.innerHTML="<INPUT TYPE='TEXT' NAME='name' SIZE='20' class='ip"+count+"'></INPUT>";
+            cell2.innerHTML="<select name='athome' style='width: 170px;' class='ips"+count+"'><option value='yes'>YES</option><option value='no'>NO</option></select>";
+            cell3.innerHTML="<br><select name='slot' style='width: 130px;' class='ips"+count+"'><option>7am-8am</option><option>8am-9am</option><option>9am-10am</option><option>10am-11am</option><option>11am-12pm</option><option>12pm-1pm</option><option>1pm-2pm</option><option>2pm-3pm</option><option>3pm-4pm</option><option>4pm-5pm</option><option>5pm-6pm</option><option>6pm-7pm</option><option>7pm-8pm</option></select><input type='button' value='Add Slot' onclick=addSlot() id='btn"+count+"'>";
+            cell4.innerHTML="<INPUT TYPE='TEXT' NAME='name' SIZE='20'class='ip"+count+"'></INPUT>"
+            }
+        function addSlot(){
+            var cell=document.getElementById("slot"+count);
+            cell.innerHTML+="<br><select name='slot' class='ips"+count+"' style='width: 130px;'><option>7am-8am</option><option>8am-9am</option><option>9am-10am</option><option>10am-11am</option><option>11am-12pm</option><option>12pm-1pm</option><option>1pm-2pm</option><option>2pm-3pm</option><option>3pm-4pm</option><option>4pm-5pm</option><option>5pm-6pm</option><option>6pm-7pm</option><option>7pm-8pm</option></select>"
+        }
+    </script>
+</head>
+<body>
+    <FORM METHOD="POST" ACTION="http://jkorpela.fi/cgi-bin/echo.cgi">
+<TABLE BORDER="1" id="myTable">
+<TR>
+    <th>TEST NAME</th>
+    <th>AVAILABLE AT HOME</th>
+    <th>TIME SLOT</th>
+    <th>COST</th>
+</TR>
+<TR>
+    <TD>
+        <INPUT TYPE='TEXT' class="ip1" NAME='name' SIZE='20'></INPUT>
+    </TD>
+    <TD>
+        <select name='athome' style='width: 170px;' class='ips1'><option value='yes'>YES</option><option value='no'>NO</option></select>
+    </TD>
+    <TD id="slot1">
+        <select name='slot1' style='width: 130px;' class="ips1" id='ip3'>
+            <option>7am-8am</option>
+            <option>8am-9am</option>
+            <option>9am-10am</option>
+            <option>10am-11am</option>
+            <option>11am-12pm</option>
+            <option>12pm-1pm</option>
+            <option>1pm-2pm</option>
+            <option>2pm-3pm</option>
+            <option>3pm-4pm</option>
+            <option>4pm-5pm</option>
+            <option>5pm-6pm</option>
+            <option>6pm-7pm</option>
+            <option>7pm-8pm</option>
+        </select><input type="button" value="Add Slot" onclick=addSlot() id="btn1">
+    </TD>
+    <TD>
+        <INPUT TYPE="TEXT" NAME="name" SIZE="20" class='ip1'></INPUT>
+    </TD>
+</TR>
+</TABLE>
+        <INPUT style="margin-left: 790px;margin-top:-25px;" TYPE="BUTTON" VALUE="ADD A ROW" onclick=addRow()></INPUT>
+        <P><INPUT TYPE="SUBMIT" VALUE="Submit" NAME="B2"></INPUT></P>
+</FORM>
+</body>
+</html>
