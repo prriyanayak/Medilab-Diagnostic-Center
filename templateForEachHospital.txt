@@ -1,0 +1,45 @@
+
+dc = [
+    {
+        "name": "DRUG OF ABUSE",
+        "at home": "No",
+        "cost": 500,
+        "time slots": "NULL"
+    },
+
+    {
+        "name": "DRUG OF ABUSE",
+        "at home": "No",
+        "cost": 500,
+        "time slots": "NULL"
+    },
+
+    {
+        "name": "DRUG OF ABUSE",
+        "at home": "No",
+        "cost": 500,
+        "time slots": "NULL"
+    },
+
+    {
+        "name": "DRUG OF ABUSE",
+        "at home": "No",
+        "cost": 500,
+        "time slots": "NULL"
+    },
+
+    {
+        "name": "DRUG OF ABUSE",
+        "at home": "No",
+        "cost": 500,
+        "time slots": "NULL"
+    },
+
+    {
+        "name": "DRUG OF ABUSE",
+        "at home": "No",
+        "cost": 500,
+        "time slots": ["12:45", "23:45"]
+    }
+
+]
