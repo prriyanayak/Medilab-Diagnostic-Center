@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<style>
+div {
+  background-color: lightgrey;
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+}
+</style>
+<body>
+    Select file to upload:
+    <br><br>
+    Select tests:
+    <select>
+      <option value="blood">Blood</option>
+      <option value="bloo">Bloo</option>
+      <option value="blo">Blo</option>
+      <option value="bl">Bl</option>
+    </select>
+    <br><br>
+    Select Name of patient:
+    <select>
+      <option value="AB">AB</option>
+      <option value="BB">BB</option>
+      <option value="CC">CC</option>
+      <option value="DD">DD</option>
+    </select>
+    <br><br>
+    <button onclick="mysubmit()" >Submit</button>
+
+    <div id="demo" style="display:none">
+      Name of the Patient: <p id="name"></p><br>
+      Age : 32 <p id="age"></p><br>
+      Gender: Female <p id="gender"></p><br><br>
+
+      <form action="upload.py" method="post" enctype="multipart/form-data">
+      <input type="file" name="fileToUpload" id="fileToUpload">
+      <br><br>
+      <input type="submit" value="Upload Report" name="submit">
+      </form>
+    </div>
+    <script>
+    function mysubmit(){
+      var x=document.getElementById("demo");
+      x.style.display="block";
+    }
+    </script>
+</body>
+</html>
