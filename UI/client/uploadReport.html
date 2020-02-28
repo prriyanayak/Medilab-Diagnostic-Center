@@ -1,0 +1,234 @@
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Upload Report</title>
+  <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
+  <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal">
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" onload="getDCName()">
+  <!--banner-->
+  <section id="banner" class="banner">
+    <div class="bg-color">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="col-md-12">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#"><img src="img/logo.png" class="img-responsive" style="width: 140px; margin-top: -16px;"></a>
+            </div>
+            <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li class=""><a href="index.html">Home</a></li>
+                <li class=""><a href="uploadSchedule.html">Schedule</a></li>
+                <li class="active"><a href="#report">Reports</a></li>
+                <li class=""><a href="#footer">Contact</a></li>
+                <li class=""><a href="login.html">Logout</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row">
+          <div class="banner-info">
+            <div class="banner-logo text-center">
+              <img src="img/logo.png" class="img-responsive">
+            </div>
+            <div class="banner-text text-center">
+                <h1 id="dc" class="white"></h1>
+            </div>
+            <div class="overlay-detail text-center">
+              <a href="#report"><i class="fa fa-angle-down"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ banner-->
+
+ 
+
+<!--report-->
+  <section id="report" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-4 col-xs-12">
+          <div class="section-title">
+            <h2 class="head-title lg-line">Upload Report</h2>
+            <hr class="botm-line">
+            <p class="sec-para">
+    <br><br><br>
+    <h4 class="ser-title">Select Tests:</h4>
+    <p>
+    <select id="mySelect" onchange="myfunc(this)">
+      
+    </select>
+    <br><br><br></p>
+    <p id="demo"></p>
+    
+    <h4 class="ser-title">Select Name of Patient:</h4>
+    <p>
+    <select id="mySelect2" name="names" style="display:none" onchange="myfunc2(this)">
+
+    </select>
+    <br><br><p>
+    
+  <div class="form-action">
+                <button id="mysubmit" type="submit" class="btn btn-form">Submit</button></p>
+          </div>
+        </div>
+        <!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content" id="modal-con">
+    <span class="close">&times;</span>
+    <p><div id="demo" style="display:block">
+      Name of the Patient: <p id="name"></p><br>
+      Age : <p id="age"></p><br>
+      Test chosen:<p id="insert"></p><br><br>
+      
+      
+      <input type="file" name="fileToUpload" id="fileToUpload">
+      <br><br>
+      <input type="submit" value="Upload Report" class="btn btn-appoint" name="submit" onclick="obj.uploadReport()">
+      
+    </div>
+    </p>
+  </div>
+
+</div>
+  </section>
+  <!--/ report-->
+
+
+  <!--footer-->
+  <footer id="footer">
+    <div class="top-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 marb20">
+            <div class="ftr-tle">
+              <h4 class="white no-padding">About Us</h4>
+            </div>
+            <div class="info-sec">
+              <p>This is a diagnostic Center Client Management System for our clients at the diagnostic centres as well as our end-users that are customers to them.</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 marb20">
+            <div class="ftr-tle">
+              <h4 class="white no-padding">Quick Links</h4>
+            </div>
+            <div class="info-sec">
+              <ul class="quick-info">
+                <li><a href="index.html"><i class="fa fa-circle"></i>Home</a></li>
+                <li><a href="uploadSchedule.html"><i class="fa fa-circle"></i>Schedule</a></li>
+                <li><a href="uploadReport.html"><i class="fa fa-circle"></i>Report</a></li>
+                
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 marb20">
+            <div class="ftr-tle">
+              <h4 class="white no-padding">Follow us</h4>
+            </div>
+            <div class="info-sec">
+              <ul class="social-icon">
+                <li class="bglight-blue"><a href="https://www.facebook.com/thelostsoulv2" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                <li class="bgdark-blue"><a href="https://www.linkedin.com/in/prriyanayak/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                <li class="bglight-blue"><a href="https://twitter.com/prriya_nayaak" target="_blank"><i class="fa fa-twitter"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-line">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            © Copyright Medilab. All Rights Reserved
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <!--/ footer-->
+
+  <script type="text/javascript">
+    function getDCName() {
+      var name = sessionStorage.getItem("dc_name");
+      var h2 = document.getElementById("dc");
+      h2.innerText = "Hi, "+ name;
+    }
+    </script>
+  <script src="js/report.js"></script>
+  <script src="js/uploadReport.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="contactform/contactform.js"></script>
+
+</body>
+
+</html>

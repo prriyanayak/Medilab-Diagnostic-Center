@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register</title>
+  <meta name="description">
+  <meta name="keywords">
+
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal">
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+        #myPage
+        {
+            background-color: floralwhite;
+        }
+    </style>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" onload="obj1.populate()">
+    <!--contact-->
+  <section id="contact" class="section-padding">
+    <div class="container"> 
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="ser-title">Sign in </h2>
+          <hr class="botm-line">
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <h3>Contact Info</h3>
+          <div class="space"></div>
+          <p><i class="fa fa-map-marker fa-fw pull-left fa-2x"></i>PES University, BSK 3rd Stage,<br> Bangalore - 560034 </p>
+          <div class="space"></div>
+          <p><i class="fa fa-envelope-o fa-fw pull-left fa-2x"></i>info@medilab.com</p>
+          <div class="space"></div>
+          <p><i class="fa fa-phone fa-fw pull-left fa-2x"></i>+1 800 123 1234</p>
+        </div>
+        <div class="col-md-8 col-sm-8 marb20">
+          <div class="contact-info">
+            <h3 class="cnt-ttl">Sign up for a hassle-free diagnostic experience</h3>
+            <div class="space"></div>
+            <div id="errormessage"></div>
+            <form action="login.html" method="post" role="form" class="contactForm">
+              <div class="form-group">
+                <input type="text" name="Fname" class="form-control br-radius-zero" id="name" placeholder="Full Name" />
+                <div class="validation"></div>
+              </div>
+            <div class="form-group">
+                <input type="email" class="form-control br-radius-zero" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validation"></div>
+              </div>
+             <div class="form-group">
+                <input type="password" name="Password" class="form-control br-radius-zero" id="password" placeholder="Your Password" data-rule="minlen:8" data-msg="Please enter at least 8 chars" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <input type="password" name="Password" class="form-control br-radius-zero" id="conf_password" placeholder="Confirm Password" data-rule="minlen:8" data-msg="Please enter at least 8 chars" />
+                <div class="validation"></div>
+              </div>
+             <div class="form-group">
+                <select class="form-control br-radius-zero" name="dc_name" id="dc_name"/>
+                <div class="validation"></div>
+            </div>
+            <br><br>
+            <div class="form-group">
+                <input type="textarea" name="address" class="form-control br-radius-zero" id="dc_address" placeholder="Diagnostic Center Address" data-rule="minlen:100" style="display: none"/>
+                <!-- <div class="validation"></div> -->
+			</div>
+              <div class="form-action">
+				<button type="submit" onclick = "obj1.addToDB()" class="btn btn-form">Register</button><br><br>
+				
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ contact-->
+  
+  <script src="js/register.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="contactform/contactform.js"></script>
+</body>
+    
+</html>

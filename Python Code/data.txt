@@ -1,0 +1,58 @@
+hospitals = [
+    {"name": "Raghavendra Diagnostic Centre", "address": "Vijayanagar"},
+
+    {"name": "Bangalore Diagnostic & Multi Speciality Centre", "address": "Rajajinagar"},
+
+    {"name": "Lotus Diagnostic Centre", "address": "Indiranagar"},
+
+    {"name": "Ragavs Diagnostic & Research Centre", "address": "Jayanagar East"},
+
+    {"name": "Sunrise Diagnostic Laboratory", "address": "Banashankari"},
+
+    {"name": "Kiran Diagnostic Centre", "address": "Banashankari"},
+
+    {"name": "Magnus Diagnostic Centre", "address": "Koramangala"},
+
+    {"name": "Acura Diagnostic Centre & Healthcare", "address": "Padmanabhanagar"},
+
+    {"name": "Icon Diagnostic Centre", "address": "Basaveshwaranagar"},
+
+    {"name": "Anand Diagnostic Laboratory", "address": "Banashankari"},
+
+    {"name": "Pulse Diagnostics Specialists Care Centre", "address": "Jayanagar"},
+
+    {"name": "Delta Diagnostic Services", "address": "Basavanagudi"},
+
+    {"name": "Veturi Polyclinic & Diagnostic Centre", "address": "RR Nagar"},
+
+    {"name": "Suhas Diagnostic Center", "address": "Banashankari"}
+
+]
+
+Also,
+
+the backend right now has a collection called hospitals.
+there are 15 diagnostic centres.
+structure - 
+[{
+    "name": "xyz",
+    "address": "banashankari"
+},
+{
+    "name": "xyz",
+    "address": "rr nagar"
+}, so on]
+
+each diagnostic center will be a separate collection.
+each diagnostic center will have 6 tests. out of these, max 3 can be done at home.
+
+structure - 
+[
+    {
+        "name": string,
+        "at home": boolean,
+        "timeslots": from 7am to 7pm in intervals of 1hr and in 24 hour format (it's a list),
+        "cost": int
+    }
+
+]

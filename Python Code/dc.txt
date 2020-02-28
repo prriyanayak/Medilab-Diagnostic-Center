@@ -1,0 +1,106 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+dc14 = [
+    {
+        "name": "PLATELET COUNT",
+        "at home": "No",
+        "cost": 130,
+        "time slots": "NULL"
+    },
+
+    {
+        "name": "ELECTROLYTES",
+        "at home": "No",
+        "cost": 330,
+        "time slots": "NULL"
+    },
+
+    {
+        "name": "BLOOD TEST",
+        "at home": "No",
+        "cost": 500,
+        "time slots": ["07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"]
+    },
+
+    {
+        "name": "INSULIN",
+        "at home": "Yes",
+        "cost": 350,
+        "time slots": ["07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"]
+    },
+
+    {
+        "name": "ULTRASOUND SCAN",
+        "at home": "No",
+        "cost": 900,
+        "time slots": "NULL"
+
+    },
+
+    {
+        "name": "LIPID PROFILE",
+        "at home": "Yes",
+        "cost": 650,
+        "time slots": ["07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"]
+    }
+
+]
+
+dc15 = [
+    {
+        "name": "DIABETIC PROFILE",
+        "at home": "No",
+        "cost": 1300,
+        "time slots": "NULL"
+    },
+
+    {
+        "name": "URINE CULTURE",
+        "at home": "Yes",
+        "cost": 330,
+        "time slots": ["10:00", "11:00", "12:00", "14:00", "15:00", "16:00", "17:00"]
+    },
+
+    {
+        "name": "BLOOD TEST",
+        "at home": "No",
+        "cost": 500,
+        "time slots": ["07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"]
+    },
+
+    {
+        "name": "HAEMOGLOBIN",
+        "at home": "Yes",
+        "cost": 130,
+        "time slots": ["07:00", "08:00", "09:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"]
+    },
+
+    {
+        "name": "ULTRASOUND SCAN",
+        "at home": "No",
+        "cost": 900,
+        "time slots": "NULL"
+
+    },
+
+    {
+        "name": "C-PEPTIDE",
+        "at home": "No",
+        "cost": 1200,
+        "time slots":"NULL"
+    }
+
+]
+
+

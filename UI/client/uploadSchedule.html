@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Schedule</title>
+
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal">
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <script type="text/javascript">
+    function getDCName() {
+      alert(sessionStorage.getItem("dc_name"));
+      // var name = sessionStorage.getItem("dc_name");
+      // var h2 = document.getElementById("dc");
+      // h2.innerText = "Hi, "+ name;
+    }
+    </script>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" onload="getDCName()">
+  <!--banner-->
+  <section id="banner" class="banner">
+    <div class="bg-color">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="col-md-12">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../landing.html"><img src="img/logo.png" class="img-responsive" style="width: 140px; margin-top: -16px;"></a>
+            </div>
+            <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+                <ul class="nav navbar-nav">
+                  <li class=""><a href="index.html">Home</a></li>
+                  <li class="active"><a href="#schedule">Schedule</a></li>
+                  <li class=""><a href="uploadReport.html">Reports</a></li>
+                  <li class=""><a href="#footer">Contact</a></li>
+                  <li class=""><a href="login.html">Logout</a></li>
+                </ul>
+              </div>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row">
+          <div class="banner-info">
+            <div class="banner-logo text-center">
+              <img src="img/logo.png" class="img-responsive">
+            </div>
+            <div class="banner-text text-center">
+              <h1 id="dc" class="white"></h1>
+            </div>
+            <div class="overlay-detail text-center">
+              <a href="#schedule"><i class="fa fa-angle-down"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ banner-->
+  <!--service-->
+  <section id="schedule" class="section-padding" style="margin-top: 50px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-sm-4">
+          <h2 class="ser-title" >Upload Schedule</h2>
+          <hr class="botm-line">
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="service-info" style="margin-left: -385px; margin-top: 100px;">
+<form method="POST">
+<div class="container">
+      <div class="row">
+<table style="margin: 8px 0px 0px;" id="myTable">
+<tbody>
+<TR>
+	<th>TEST NAME</th>
+	<th>COST</th>
+	<th>TIME SLOT</th>
+    <th>DAY</th>
+    <th>HOME CAPACITY</th>
+    <th>DC CAPACITY</th>
+</TR>
+<TR>
+    <TD>
+        <!--<INPUT TYPE='TEXT' class="ip1" NAME='name' SIZE='20'></INPUT>-->
+        <select name='name' style='width: 170px;' id='ip1' onchange='getCost(this.value)'>
+            <!--<option value='Blood Test'>Blood Test</option>
+            <option value='Routine check-up'>Routine check-up</option>-->
+        </select>
+    </TD>
+	
+	<TD>
+        <INPUT TYPE="TEXT" NAME="cost" SIZE="20" id='ipc1'></INPUT>
+	</TD>
+	
+	
+    <TD id="slot1">
+        <select name='slot1' style='width: 130px;' class="timeslot1" id='ip3'>
+            <option>07:00-08:00</option>
+            <option>08:00-09:00</option>
+            <option>09:00-10:00</option>
+            <option>10:00-11:00</option>
+            <option>11:00-12:00</option>
+            <option>12:00-13:00</option>
+            <option>13:00-14:00</option>
+            <option>14:00-15:00</option>
+            <option>15:00-16:00</option>
+            <option>16:00-17:00</option>
+            <option>17:00-18:00</option>
+            <option>18:00-19:00</option>
+        </select><input type="button" value="Add Slot" onclick=addSlot() id="btn1">
+	</TD>
+	
+   
+    <TD id="day1">    
+        <select name='day' style='width: 170px;' class='ips1'>
+            <option value='today'>Today</option>
+            <option value='tomorrow'>Tomorrow</option>
+            <option value='day-after'>Day-after</option>
+        </select>
+	</TD>
+	
+    <TD id="home1">
+        <select name="at home" style='width: 170px;' class="athome1">
+            <option>None</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+	</TD>
+	
+    <TD id="dc1">
+        <select name="at dc" style='width: 170px;' class="atdc1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+    </TD>
+</TR>
+</tbody>
+</table>
+    </div>
+        </div>
+        <INPUT style="margin-left: 1000px;margin-top:0px;" TYPE="BUTTON" VALUE="ADD A ROW" onclick=addRow()></INPUT>
+        <P><INPUT TYPE="SUBMIT" VALUE="Submit" NAME="B2" id="submitbtn"></INPUT></P>
+</form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ service-->
+
+
+  <!--footer-->
+  <footer id="footer">
+    <div class="top-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 marb20">
+            <div class="ftr-tle">
+              <h4 class="white no-padding">About Us</h4>
+            </div>
+            <div class="info-sec">
+              <p>This is a Diagnostic Center Client Management System for our clients at the diagnostic centres as well as our end-users that are customers to them.</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 marb20">
+            <div class="ftr-tle">
+              <h4 class="white no-padding">Quick Links</h4>
+            </div>
+            <div class="info-sec">
+              <ul class="quick-info">
+                <li><a href="index.html"><i class="fa fa-circle"></i>Home</a></li>
+                <li><a href="uploadSchedule.html"><i class="fa fa-circle"></i>Schedule</a></li>
+                <li><a href="uploadReport.html"><i class="fa fa-circle"></i>Report</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 marb20">
+            <div class="ftr-tle">
+              <h4 class="white no-padding">Follow us</h4>
+            </div>
+            <div class="info-sec">
+              <ul class="social-icon">
+                <li class="bglight-blue"><a href="https://www.facebook.com/thelostsoulv2" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                <li class="bgdark-blue"><a href="https://www.linkedin.com/in/prriyanayak/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                <li class="bglight-blue"><a href="https://twitter.com/prriya_nayaak" target="_blank"><i class="fa fa-twitter"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-line">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            © Copyright Medilab. All Rights Reserved
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <!--/ footer-->
+
+  
+  <script src="js/uploadSchedule.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="contactform/contactform.js"></script>
+
+</body>
+
+</html>

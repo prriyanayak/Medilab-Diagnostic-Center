@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Booking an appointment</title>
+  <meta name="description">
+  <meta name="keywords">
+
+  <link rel="stylesheet" type="text/css" href="css/googleapi.css">
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script type="text/javascript" src="js/booking.js"></script>
+
+  <style>
+    #Hitext
+    {
+        color: white;
+        font-size: 16px;
+        margin: 15px;
+    }
+</style>
+</head>
+
+<body onload = "displayFname()" id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+  <!--banner-->
+  <section id="banner" class="banner">
+    <div class="bg-color">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="col-md-12">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../landing.html"><img src="img/logo.png" class="img-responsive" style="width: 140px; margin-top: -16px;"></a>
+            </div>
+            <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#banner">Home</a></li>
+                <li class=""><a href="#service">Service</a></li>
+                <li class="active"><a href="#about">About</a></li>
+                <li class=""><a href="#testimonial">Testimonial</a></li>
+                <li class="" id="Hitext"><a href=""></a></li>
+                <li class=""><a href="index.html">Log Out</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row">
+          <div class="banner-info">
+            <div class="banner-logo text-center">
+              <img src="img/logo.png" class="img-responsive">
+            </div>
+            <div class="banner-text text-center">
+              <h1 class="white">Healthcare is one click away!</h1>
+              <p>We, here at Medilab Diagnostics, believe in making something as crucial as body tests available to anyone, anywhere.</p>
+              <a href="#makeappointment" onclick="makeappointment()" class="btn btn-appoint">Make an Appointment.</a>
+              <a href="#viewappointments" onclick="displayAppointments()" class="btn btn-appoint">View Your Appointments</a>
+            </div>
+            <div class="overlay-detail text-center">
+              <a href="#service"><i class="fa fa-angle-down"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ banner-->
+     
+  
+  <!--contact-->
+  <section id="makeappointment" class="section-padding" style="display: none">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="ser-title">BOOK AN APPOINTMENT</h2>
+          <hr class="botm-line">
+        </div>
+        <div class="col-md-8 col-sm-8 marb20">
+          <div class="contact-info">
+            <h3 class="cnt-ttl">Enter Location</h3>
+            <div class="space"></div>
+            <!-- <div id="sendmessage">Your message has been sent. Thank you!</div> -->
+            <div id="errormessage"></div>
+            <form action="" method="post" role="form" class="contactForm">
+              <div class="form-group">
+                <select id="Location" class="form-control br-radius-zero" >
+                  <option value="">Choose Location</option> 
+                  <option value="Indiranagar">Indiranagar</option>
+                  <option value="Rajajinagar">Rajajinagar</option>
+                  <option value="Vijayanagar">Vijayanagar</option>
+                  <option value="Jayanagar East">Jayanagar East</option>
+                  <option value="Jayanagar">Jayanagar</option>
+                  <option value="Banashankari">Banashankari</option>
+                  <option value="Koramangala">Koramangala</option>
+                  <option value="Padmanabhanagar">Padmanabhanagar</option>
+                  <option value="Basaveshwaranagar">Basaveshwaranagar</option>
+                  <option value="Basavanagudi">Basavanagudi</option>
+                  <option value="RR Nagar">RR Nagar</option>
+                </select>
+              </div>
+              <div class="form-action">
+                <button type="submit" onclick="sendLocation()" class="btn btn-form" >Send Location</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ contact-->
+
+
+
+ <section id="viewappointments" class="section-padding" style="display:none">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="ser-title">YOUR APPOINTMENTS ARE</h2>
+          <hr class="botm-line">
+        </div>
+        <div class="col-md-8 col-sm-8 marb20">
+          <div class="contact-info">
+            <!-- <h3 class="cnt-ttl">Enter Location</h3> -->
+            <div class="space"></div>
+            <!-- <div id="sendmessage">Your message has been sent. Thank you!</div> -->
+            <div id="errormessage"></div>
+            
+              <div class="form-group">
+                 <div id="tab" class="form-group">
+                      <table id="l">
+                         <tr>
+                           <th>Centre</th>
+                           <th>Test</th>
+                           <th>Time Slot</th>
+                           <th>Day</th>
+                         </tr>
+                      </table>              
+                 </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!--service-->
+  <section id="service" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-sm-4">
+          <h2 class="ser-title">Our Service</h2>
+          <hr class="botm-line">
+          <p>We are a one-stop solution for all your diagnostic needs. We connect you to the best pathologists at various test centers and hospitals throughout the city. We believe in providing the most services at affordable prices</p>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="service-info">
+            <div class="icon">
+              <i class="fa fa-stethoscope"></i>
+            </div>
+            <div class="icon-info">
+              <h4>Our Guarantee</h4>
+              <p>All the tests are carried out by the trained people at the well-reputated centers only. We strive to provide a unique blissful experience to each and every customer of ours. </p>
+            </div>
+          </div>
+          <div class="service-info">
+            <div class="icon">
+              <i class="fa fa-ambulance"></i>
+            </div>
+            <div class="icon-info">
+              <h4>Services at home</h4>
+              <p>Some tests like blood tests, urine tests etc do not require the patient to come all the way to the center. We have to collaborated in order to provide hassle-free experience at your own homes. </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="service-info">
+            <div class="icon">
+              <i class="fa fa-user-md"></i>
+            </div>
+            <div class="icon-info">
+              <h4>Medical Counseling</h4>
+              <p>The reports generated are shared with you along with a free medical advice provided by the doctors themselves. The counseling is free of cost and is guaranteed by us. </p>
+            
+            </div>
+          </div>
+          <div class="service-info">
+            <div class="icon">
+              <i class="fa fa-medkit"></i>
+            </div>
+            <div class="icon-info">
+                <h4>Premium healthcare </h4>
+                <p>All the test centers and hospitals that are present on our app are first verified to get registered. This ensures genuine and trusted healthcare services. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ service-->
+  <!--about-->
+  <section id="about" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-4 col-xs-12">
+          <div class="section-title">
+            <h2 class="head-title lg-line">The Medilab <br>Ultimate Dream</h2>
+            <hr class="botm-line">
+            <p class="sec-para"> Our dream is to make something as important as a blood test, more affordable and availabl to every one. </p>
+            <a href="" style="color: #0cb8b6; padding-top:10px;">Know more..</a>
+          </div>
+        </div>
+        <div class="col-md-9 col-sm-8 col-xs-12">
+          <div style="visibility: visible;" class="col-sm-9 more-features-box">
+            <div class="more-features-box-text">
+              <div class="more-features-box-text-icon"> <i class="fa fa-angle-right" aria-hidden="true"></i> </div>
+              <div class="more-features-box-text-description">
+                <h3>It's something important you want to know.</h3>
+                <p>We are one of the leading service provides in the diagnostic field. With over 3000 happy customers, we have made customer satisfaction our utmost priority. </p>
+              </div>
+            </div>
+            <div class="more-features-box-text">
+              <div class="more-features-box-text-icon"> <i class="fa fa-angle-right" aria-hidden="true"></i> </div>
+              <div class="more-features-box-text-description">
+                <h3>It's something important you need to know.</h3>
+                <p>We are a trusted website by over 50 top diagnostic centers/hospitals in the city, over different areas. We provide a great user experience to all the clients. </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ about-->
+
+  <!--testimonial-->
+  <section id="testimonial" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="ser-title">see what patients are saying?</h2>
+          <hr class="botm-line">
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <div class="testi-details">
+            <!-- Paragraph -->
+            <p>As a user, all my issues of finding an appropriate diagnostic for a given test have been solved. It is very easy to operate their website and book appointments. Now, I can spend more time understanding the results than worry about getting the test done. </p>
+          </div>
+          <div class="testi-info">
+            <!-- User Image -->
+            <a href="#"><img src="img/female.png" alt="" class="img-responsive"></a>
+            <!-- User Name -->
+            <h3>Aliena<span>C Joy</span></h3>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <div class="testi-details">
+            <!-- Paragraph -->
+            <p>The entire tedious process for looking for the centers for cheaper rates is all simplified because of Medilab. It also sends me the report directly from the doctor without any worries. This has made my task a lot easier and faster. I strongly recommend it to everybody. </p>
+          </div>
+          <div class="testi-info">
+            <!-- User Image -->
+            <a href="#"><img src="img/thumb.png" alt="" class="img-responsive"></a>
+            <!-- User Name -->
+            <h3>Rishabh<span> Khanna</span></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ testimonial-->
+  <!--footer-->
+  <footer id="footer">
+    <div class="top-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 marb20">
+            <div class="ftr-tle">
+              <h4 class="white no-padding">About Us</h4>
+            </div>
+            <div class="info-sec">
+              <p>Diagnostic Center Client Management System for our clients at the diagnostic centers as well as for the end-users that are the customers to them. </p><br>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 marb20">
+            <div class="ftr-tle">
+              <h4 class="white no-padding">Quick Links</h4>
+            </div>
+            <div class="info-sec">
+              <ul class="quick-info">
+                <li><a href="index.html"><i class="fa fa-circle"></i>Home</a></li>
+                <li><a href="#service"><i class="fa fa-circle"></i>Service</a></li>
+                <li><a href="login.html"><i class="fa fa-circle"></i>Appointment</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 marb20">
+            <div class="ftr-tle">
+              <h4 class="white no-padding">Follow us</h4>
+            </div>
+            <div class="info-sec">
+              <ul class="social-icon">
+                <li class="bglight-blue"><i class="fa fa-facebook"></i></li>
+                <li class="bgred"><i class="fa fa-google-plus"></i></li>
+                <li class="bgdark-blue"><i class="fa fa-linkedin"></i></li>
+                <li class="bglight-blue"><i class="fa fa-twitter"></i></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--/ footer-->
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="contactform/contactform.js"></script>
+
+</body>
+
+</html>
